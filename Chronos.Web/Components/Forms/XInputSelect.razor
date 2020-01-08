@@ -1,0 +1,22 @@
+﻿@inherits XInputBaseString
+
+
+<XInputWrapper Id="@Id" Label="@Label" ValidationFor="@ValidationFor" ShowValidationMessage="@SummaryShowValidationMessage"
+                DivClass="@SummaryDivClass" LabelClass="@SummaryLabelClass" ValidationClass="@SummaryValidationClass">
+
+    <select @attributes="@AdditionalAttributes" class="@SummaryCssClass" id="@Id" @bind="@CurrentValue">
+        @foreach (var (key, value) in Options)
+        {
+            <option value="@key">@value</option>
+        }
+    </select>
+
+</XInputWrapper>
+
+
+@code {
+
+    [Parameter]
+    public IEnumerable<KeyValuePair<string, string>> Options { get; set; }
+
+}

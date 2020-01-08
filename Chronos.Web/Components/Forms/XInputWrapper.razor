@@ -1,0 +1,47 @@
+﻿@using System.Linq.Expressions
+@using Microsoft.AspNetCore.Components.Forms
+
+
+<div class="@DivClass">
+    @if (!string.IsNullOrWhiteSpace(Label))
+    {
+        <label class="@LabelClass" for="@Id">@Label</label>
+    }
+    @ChildContent
+    @if (ShowValidationMessage)
+    {
+        <div class="@ValidationClass">
+            <ValidationMessage For="@ValidationFor" />
+        </div>
+    }
+
+</div>
+
+
+@code {
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public bool ShowValidationMessage { get; set; }
+
+    [Parameter]
+    public string Id { get; set; }
+
+    [Parameter]
+    public string Label { get; set; }
+
+    [Parameter]
+    public string DivClass { get; set; }
+
+    [Parameter]
+    public string LabelClass { get; set; }
+
+    [Parameter]
+    public string ValidationClass { get; set; }
+
+    [Parameter]
+    public Expression<Func<string>> ValidationFor { get; set; }
+
+}

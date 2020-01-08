@@ -1,0 +1,9 @@
+﻿@inherits XInputBaseString
+
+
+<XInputWrapper Id="@Id" Label="@Label" ValidationFor="@ValidationFor" ShowValidationMessage="@SummaryShowValidationMessage"
+                DivClass="@SummaryDivClass" LabelClass="@SummaryLabelClass" ValidationClass="@SummaryValidationClass">
+
+    <input @attributes="@AdditionalAttributes" type="text" class="@SummaryCssClass" id="@Id" @bind="@CurrentValue" />
+
+</XInputWrapper>

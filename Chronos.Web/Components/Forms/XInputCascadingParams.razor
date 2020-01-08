@@ -1,0 +1,55 @@
+﻿@using System.Linq.Expressions
+@implements IXInputParams
+
+
+<CascadingValue Value="@this">
+    @ChildContent
+</CascadingValue>
+
+
+@code {
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    public string Id { get; set; }
+
+    public string Label { get; set; }
+
+    [Parameter]
+    public bool? FormControl { get; set; }
+
+    [Parameter]
+    public bool? ShowValidationMessage { get; set; }
+
+    [Parameter]
+    public string DivClass { get; set; }
+
+    [Parameter]
+    public string LabelClass { get; set; }
+
+    [Parameter]
+    public string CssClass { get; set; }
+
+    [Parameter]
+    public string ValidationClass { get; set; }
+
+    [Parameter]
+    public Expression<Func<string>> ValidationFor { get; set; }
+
+
+    [CascadingParameter]
+    public IXInputParams OuterCascadingParams { get; set; }
+
+    protected override void OnInitialized()
+    {
+        FormControl ??= OuterCascadingParams?.FormControl;
+        ShowValidationMessage ??= OuterCascadingParams?.ShowValidationMessage;
+        DivClass ??= OuterCascadingParams?.DivClass;
+        LabelClass ??= OuterCascadingParams?.LabelClass;
+        CssClass ??= OuterCascadingParams?.CssClass;
+        ValidationClass ??= OuterCascadingParams?.ValidationClass;
+        ValidationFor ??= OuterCascadingParams?.ValidationFor;
+    }
+
+}
