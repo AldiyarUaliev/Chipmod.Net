@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Chronos.Data.EFCore
 {
-    public abstract class ScMsSqlDbContext : XDbContext
+    public abstract class XMsSqlDbContext : XDbContext
     {
-        protected ScMsSqlDbContext(IConfiguration configuration) : base(configuration)
+        protected XMsSqlDbContext(IConfiguration configuration) : base(configuration)
         {
         }
 
