@@ -5,27 +5,25 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Chronos.Data.Repository
 {
-    public class RepositoryFactory
+    public class EFCoreRepositoryFactory<TContext> where TContext : DbContext
     {
-        public static EFCoreReadRepository<TEntity, TId, TContext> EFCoreReadRepository<TEntity, TId, TContext>(
+        public IReadRepository<TEntity, TId> ReadRepository<TEntity, TId>(
             IServiceProvider serviceProvider,
             Func<TContext, DbSet<TEntity>> dbSet,
             Expression<Func<TEntity, TId>> entityId)
             where TEntity : class
             where TId : IEquatable<TId>
-            where TContext : DbContext
         {
             var context = serviceProvider.GetRequiredService<TContext>();
             return new EFCoreReadRepository<TEntity, TId, TContext>(context, dbSet, entityId);
         }
 
-        public static EFCoreRepository<TEntity, TId, TContext> EFCoreRepository<TEntity, TId, TContext>(
+        public IRepository<TEntity, TId> Repository<TEntity, TId>(
             IServiceProvider serviceProvider,
             Func<TContext, DbSet<TEntity>> dbSet,
             Expression<Func<TEntity, TId>> entityId)
             where TEntity : class
             where TId : IEquatable<TId>
-            where TContext : DbContext
         {
             var context = serviceProvider.GetRequiredService<TContext>();
             return new EFCoreRepository<TEntity, TId, TContext>(context, dbSet, entityId);
