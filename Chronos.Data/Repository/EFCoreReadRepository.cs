@@ -16,11 +16,10 @@ namespace Chronos.Data.Repository
         protected readonly DbSet<TEntity> DbSet;
         protected readonly Expression<Func<TEntity, TId>> EntityId;
 
-        public EFCoreReadRepository(TContext context, Func<TContext, DbSet<TEntity>> dbSet,
-            Expression<Func<TEntity, TId>> entityId)
+        public EFCoreReadRepository(TContext context, Expression<Func<TEntity, TId>> entityId)
         {
             Context = context;
-            DbSet = dbSet(context);
+            DbSet = context.Set<TEntity>();
             EntityId = entityId;
         }
 
@@ -53,6 +52,14 @@ namespace Chronos.Data.Repository
             return predicate is null
                 ? null
                 : await DbSet.Where(predicate).ToListAsync();
+        }
+
+        public async Task<IQueryable<TEntity>> Query(Expression<Func<TEntity, bool>> predicate)
+        {
+            await Task.Yield();
+            return predicate is null
+                ? null
+                : DbSet.Where(predicate);
         }
 
     }

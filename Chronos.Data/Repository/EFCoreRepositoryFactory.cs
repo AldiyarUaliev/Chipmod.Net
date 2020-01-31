@@ -9,24 +9,22 @@ namespace Chronos.Data.Repository
     {
         public IReadRepository<TEntity, TId> ReadRepository<TEntity, TId>(
             IServiceProvider serviceProvider,
-            Func<TContext, DbSet<TEntity>> dbSet,
             Expression<Func<TEntity, TId>> entityId)
             where TEntity : class
             where TId : IEquatable<TId>
         {
             var context = serviceProvider.GetRequiredService<TContext>();
-            return new EFCoreReadRepository<TEntity, TId, TContext>(context, dbSet, entityId);
+            return new EFCoreReadRepository<TEntity, TId, TContext>(context, entityId);
         }
 
         public IRepository<TEntity, TId> Repository<TEntity, TId>(
             IServiceProvider serviceProvider,
-            Func<TContext, DbSet<TEntity>> dbSet,
             Expression<Func<TEntity, TId>> entityId)
             where TEntity : class
             where TId : IEquatable<TId>
         {
             var context = serviceProvider.GetRequiredService<TContext>();
-            return new EFCoreRepository<TEntity, TId, TContext>(context, dbSet, entityId);
+            return new EFCoreRepository<TEntity, TId, TContext>(context, entityId);
         }
 
     }

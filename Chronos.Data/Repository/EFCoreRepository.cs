@@ -13,8 +13,7 @@ namespace Chronos.Data.Repository
         where TId : IEquatable<TId>
         where TContext : DbContext
     {
-        public EFCoreRepository(TContext context, Func<TContext, DbSet<TEntity>> dbSet,
-            Expression<Func<TEntity, TId>> entityId) : base(context, dbSet, entityId)
+        public EFCoreRepository(TContext context, Expression<Func<TEntity, TId>> entityId) : base(context, entityId)
         {
         }
 
