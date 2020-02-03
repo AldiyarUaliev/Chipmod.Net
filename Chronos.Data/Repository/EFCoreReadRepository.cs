@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Chronos.Data.Repository
 {
-    public class EFCoreReadRepository<TEntity, TId, TContext> : IReadRepository<TEntity, TId>
+    public class EFCoreReadRepository<TContext, TEntity, TId> : IReadRepository<TEntity, TId>
+        where TContext : DbContext
         where TEntity : class
         where TId : IEquatable<TId>
-        where TContext : DbContext
     {
         protected readonly TContext Context;
         protected readonly DbSet<TEntity> DbSet;

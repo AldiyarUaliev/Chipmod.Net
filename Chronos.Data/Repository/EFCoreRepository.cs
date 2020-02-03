@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Chronos.Data.Repository
 {
-    public class EFCoreRepository<TEntity, TId, TContext>
-        : EFCoreReadRepository<TEntity, TId, TContext>, IRepository<TEntity, TId>
+    public class EFCoreRepository<TContext, TEntity, TId>
+        : EFCoreReadRepository<TContext, TEntity, TId>, IRepository<TEntity, TId>
+        where TContext : DbContext
         where TEntity : class
         where TId : IEquatable<TId>
-        where TContext : DbContext
     {
         public EFCoreRepository(TContext context, Expression<Func<TEntity, TId>> entityId) : base(context, entityId)
         {
