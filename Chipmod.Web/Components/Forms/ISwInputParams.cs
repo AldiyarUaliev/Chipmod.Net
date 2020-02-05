@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Chronos.Web.Components.Forms
+namespace Chipmod.Web.Components.Forms
 {
-    public interface IXInputParams
+    public interface ISwInputParams
     {
         string Id { get; set; }
         string Label { get; set; }

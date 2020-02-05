@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Chronos.Data.Repository
+namespace Chipmod.Data.Repository
 {
     public interface IRepository<TEntity, in TId> : IReadRepository<TEntity, TId>
         where TId : IEquatable<TId>

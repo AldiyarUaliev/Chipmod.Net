@@ -1,5 +1,5 @@
 ﻿@using System.Linq.Expressions
-@implements IXInputParams
+@implements ISwInputParams
 
 
 <CascadingValue Value="@this">
@@ -39,17 +39,17 @@
 
 
     [CascadingParameter]
-    public IXInputParams OuterCascadingParams { get; set; }
+    public ISwInputParams OtherCascadingParams { get; set; }
 
     protected override void OnInitialized()
     {
-        FormControl ??= OuterCascadingParams?.FormControl;
-        ShowValidationMessage ??= OuterCascadingParams?.ShowValidationMessage;
-        DivClass ??= OuterCascadingParams?.DivClass;
-        LabelClass ??= OuterCascadingParams?.LabelClass;
-        CssClass ??= OuterCascadingParams?.CssClass;
-        ValidationClass ??= OuterCascadingParams?.ValidationClass;
-        ValidationFor ??= OuterCascadingParams?.ValidationFor;
+        FormControl ??= OtherCascadingParams?.FormControl;
+        ShowValidationMessage ??= OtherCascadingParams?.ShowValidationMessage;
+        DivClass ??= OtherCascadingParams?.DivClass;
+        LabelClass ??= OtherCascadingParams?.LabelClass;
+        CssClass ??= OtherCascadingParams?.CssClass;
+        ValidationClass ??= OtherCascadingParams?.ValidationClass;
+        ValidationFor ??= OtherCascadingParams?.ValidationFor;
     }
 
 }

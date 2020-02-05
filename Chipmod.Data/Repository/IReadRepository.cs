@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Chronos.Data.Repository
+namespace Chipmod.Data.Repository
 {
     public interface IReadRepository<TEntity, in TId>
         where TId : IEquatable<TId>

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
-namespace Chronos.Data.Repository
+namespace Chipmod.Data.Repository
 {
     public class EFCoreRepositoryFactory<TContext> where TContext : DbContext
     {

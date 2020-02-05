@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Chronos.Data.Repository
+namespace Chipmod.Data.Repository
 {
     public static class Expressions
     {

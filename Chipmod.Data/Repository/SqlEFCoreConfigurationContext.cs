@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Chronos.Data.Repository
+namespace Chipmod.Data.Repository
 {
     public abstract class SqlEFCoreConfigurationContext : EFCoreConfigurationContext
     {

@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Chronos.Data.Repository
+namespace Chipmod.Data.Repository
 {
     public static class ServiceCollectionExtensions
     {

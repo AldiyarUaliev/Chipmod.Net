@@ -3,9 +3,9 @@ using System.Linq.Expressions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 
-namespace Chronos.Web.Components.Forms
+namespace Chipmod.Web.Components.Forms
 {
-    public class XInputBaseString : InputBase<string>, IXInputParams
+    public class SwInputBaseString : InputBase<string>, ISwInputParams
     {
         [Parameter] public string Id { get; set; }
         [Parameter] public string Label { get; set; }
@@ -17,7 +17,7 @@ namespace Chronos.Web.Components.Forms
         [Parameter] public string ValidationClass { get; set; }
         [Parameter] public Expression<Func<string>> ValidationFor { get; set; }
 
-        [CascadingParameter] public IXInputParams CascadingParams { get; set; }
+        [CascadingParameter] public ISwInputParams CascadingParams { get; set; }
 
         protected bool SummaryFormControl => FormControl ?? CascadingParams?.FormControl ?? false;
         protected bool SummaryShowValidationMessage => ShowValidationMessage ?? CascadingParams.ShowValidationMessage ?? false;

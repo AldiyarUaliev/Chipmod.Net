@@ -1,12 +1,12 @@
-﻿@inherits XInputBaseString
+﻿@inherits SwInputBaseString
 
 
-<XInputWrapper Id="@Id" Label="@Label" ValidationFor="@ValidationFor" ShowValidationMessage="@SummaryShowValidationMessage"
+<SwInputWrapper Id="@Id" Label="@Label" ValidationFor="@ValidationFor" ShowValidationMessage="@SummaryShowValidationMessage"
                 DivClass="@SummaryDivClass" LabelClass="@SummaryLabelClass" ValidationClass="@SummaryValidationClass">
 
     <textarea @attributes="@AdditionalAttributes" class="@SummaryCssClass" rows="@Rows" wrap="soft" id="@Id" @bind="@CurrentValue"></textarea>
 
-</XInputWrapper>
+</SwInputWrapper>
 
 
 @code {

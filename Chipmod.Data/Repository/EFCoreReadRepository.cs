@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Chronos.Data.Repository
+namespace Chipmod.Data.Repository
 {
     public class EFCoreReadRepository<TContext, TEntity, TId> : IReadRepository<TEntity, TId>
         where TContext : DbContext

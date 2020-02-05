@@ -1,7 +1,7 @@
-﻿@inherits XInputBaseString
+﻿@inherits SwInputBaseString
 
 
-<XInputWrapper Id="@Id" Label="@Label" ValidationFor="@ValidationFor" ShowValidationMessage="@SummaryShowValidationMessage"
+<SwInputWrapper Id="@Id" Label="@Label" ValidationFor="@ValidationFor" ShowValidationMessage="@SummaryShowValidationMessage"
                 DivClass="@SummaryDivClass" LabelClass="@SummaryLabelClass" ValidationClass="@SummaryValidationClass">
 
     <select @attributes="@AdditionalAttributes" class="@SummaryCssClass" id="@Id" @bind="@CurrentValue">
@@ -11,7 +11,7 @@
         }
     </select>
 
-</XInputWrapper>
+</SwInputWrapper>
 
 
 @code {

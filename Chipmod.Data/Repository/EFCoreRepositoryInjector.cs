@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Chronos.Data.Repository
+namespace Chipmod.Data.Repository
 {
     public class EFCoreRepositoryInjector<TContext> where TContext : DbContext
     {
